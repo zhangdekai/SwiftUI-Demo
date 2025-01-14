@@ -19,32 +19,59 @@ import SwiftUI
  4:  #Preview("ListPage") {
  ListViewPage()
  }
+ 5. NavigationView ：确保只有最外层的页面包含 NavigationView，而子页面不需要再嵌套一个新的 NavigationView。
  
  */
 
 struct ContentView: View {
+    
+    private let listData:[HomeDataModel] = [HomeDataModel(key: 0, title: "LandMark List") , HomeDataModel(key: 1, title: "Badge Page"),
+    ]
+    
+    
     var body: some View {
         
-        ZStack {
-            
-            VStack{
-                
-                Text("Image").font(.title)
+        NavigationView {
+            VStack {
                 
                 CircleImage(image: Image("star_game"))
-                                
-                HStack {
-                    Image(systemName: "globe")
-                        .imageScale(.large)
-                        .foregroundColor(Color.pink)
+                
+                List(listData, id: \.self){ item in
                     
-                    Text("Hello World!").font(Font(.init(.label, size: 17)))
-                    Spacer()
-                    Text("你好")
-                }.padding()
+                    NavigationLink {
+                        
+                        if(item.key == 0){
+                            ListViewPage()
+                            
+                        } else if(item.key == 1){
+                            BadgePage()
+                            
+                        }
+                        
+                    } label: {
+                        HStack {
+                            Image(systemName: "globe")
+                                .imageScale(.large)
+                                .foregroundColor(Color.pink)
+                            
+                            Text(item.title).font(Font(.init(.label, size: 17)))
+                            
+                        }.padding()
+                    }
+                    
+                }
                 
             }
+            .navigationBarHidden(true)
+            .navigationTitle("Swift UI")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Image("back_icon")
+                }
+            }
         }
+        
         
     }
 }

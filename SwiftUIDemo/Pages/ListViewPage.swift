@@ -7,16 +7,9 @@
 
 import SwiftUI
 
-/*
- 
- @State private var showFavoritesOnly = false
- 
- 
- */
 
 struct ListViewPage: View {
     
-    //    @Environment(ModelData.self) var modelData // 17.0 upper
     
     @State private var showFavoritesOnly = false
     
@@ -25,77 +18,32 @@ struct ListViewPage: View {
             (!showFavoritesOnly || landMark.isFavorite)
         }
         
-        //        modelData.landMarkData.filter { landMark in
-        //            (!showFavoritesOnly || landMark.isFavorite)
-        //        }
     }
     
     var body: some View {
         
-        if #available(iOS 16.0, *) {
+        
+        List{
             
-            NavigationSplitView {
-                List{
-                    
-                    Toggle(isOn: $showFavoritesOnly) {
-                        Text("Show Favorites Only ")
-                    }
-                    
-                    ForEach(filteredLandmarks, id: \.self) { item in
-                        
-                        // Navigation push
-                        NavigationLink {
-                            MapViewPage(landmark: item)
-                        } label: {
-                            LandmarkRow(landmark: item)
-                        }
-                    }
-                }
-                // Add 动画
-                .animation(.default, value: filteredLandmarks)
-                .navigationBarTitle("List View")
-                .navigationBarTitleDisplayMode(.inline)
-                .toolbar {
-                    ToolbarItem(placement: .topBarLeading) {
-                        Image("back_icon")
-                    }
-                }
-            } detail: {
-                // in ipad will see this detail
-                Text("Select a landmark")
+            Toggle(isOn: $showFavoritesOnly) {
+                Text("Show Favorites Only ")
             }
-        } else {
             
-            NavigationView {
+            ForEach(filteredLandmarks, id: \.self) { item in
                 
-                List{
-                    
-                    Toggle(isOn: $showFavoritesOnly) {
-                        Text("Show Favorites Only ")
-                    }
-                    
-                    ForEach(filteredLandmarks, id: \.self) { item in
-                        
-                        // Navigation push
-                        NavigationLink {
-                            MapViewPage(landmark: item)
-                        } label: {
-                            LandmarkRow(landmark: item)
-                        }
-                    }
-                }
-                .animation(.default, value: filteredLandmarks)
-                .navigationBarTitle("List View")
-                .navigationBarTitleDisplayMode(.inline)
-                .toolbar {
-                    ToolbarItem(placement: .topBarLeading) {
-                        Image("back_icon")
-                    }
+                // Navigation push
+                NavigationLink {
+                    MapViewPage(landmark: item)
+                } label: {
+                    LandmarkRow(landmark: item)
                 }
             }
         }
+        .animation(.default, value: filteredLandmarks)
+        .navigationBarTitle("List View")
         
     }
+    
 }
 
 struct LandMarkListView : View {
@@ -155,9 +103,9 @@ struct LandmarkRow: View {
                 Image(systemName: "star.fill")
                     .foregroundColor(.gray)
             }
-        
-    }.padding().background(Color.green.opacity(0.3))
-}
+            
+        }.padding().background(Color.green.opacity(0.3))
+    }
 }
 
 
