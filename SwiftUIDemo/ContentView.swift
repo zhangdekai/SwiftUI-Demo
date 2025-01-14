@@ -25,7 +25,10 @@ import SwiftUI
 
 struct ContentView: View {
     
-    private let listData:[HomeDataModel] = [HomeDataModel(key: 0, title: "LandMark List") , HomeDataModel(key: 1, title: "Badge Page"),
+    private let listData:[HomeDataModel] = [
+        HomeDataModel(key: 0, title: "LandMark List"),
+        HomeDataModel(key: 1, title: "Badge Page"),
+        HomeDataModel(key: 2, title: "响应式"),
     ]
     
     
@@ -46,6 +49,9 @@ struct ContentView: View {
                         } else if(item.key == 1){
                             BadgePage()
                             
+                        }else if(item.key == 2){
+                            ObserveViewPage()
+                        
                         }
                         
                     } label: {
