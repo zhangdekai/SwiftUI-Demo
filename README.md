@@ -8,5 +8,5 @@ SwiftUI Demo
  2. 三方库引入，MapKit
  3. List View, Data show in List; Image,Text,frame,Path
  4. Home Page use Tabview, include CategoryHome and ListHomePage
- 5. ObservableObject, @EnvironmentObject, @State, 状态管理
+ 5. 状态管理响应式-ObserveViewPage, apply ObservableObject, @EnvironmentObject, @State, 
  
