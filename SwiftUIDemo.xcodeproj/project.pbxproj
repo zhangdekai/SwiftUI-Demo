@@ -6,10 +6,15 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		49FF99492D55B53000138C7F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 49FF99482D55B53000138C7F /* README.md */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		3E8D1E2F8AA65C85E721F305 /* Pods_SwiftUIDemo_SwiftUIDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftUIDemo_SwiftUIDemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4439ED15E309580A6C01440C /* Pods_SwiftUIDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftUIDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49CC019E2D30F1F600BF2ECB /* SwiftUIDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		49FF99482D55B53000138C7F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		97282B3468E128EA3FB4F0D1 /* Pods_SwiftUIDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftUIDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -45,6 +50,7 @@
 		49CC01952D30F1F600BF2ECB = {
 			isa = PBXGroup;
 			children = (
+				49FF99482D55B53000138C7F /* README.md */,
 				49CC01A02D30F1F600BF2ECB /* SwiftUIDemo */,
 				49CC019F2D30F1F600BF2ECB /* Products */,
 				14FD0B8B0E2AA4AD3415B07F /* Frameworks */,
@@ -121,6 +127,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49FF99492D55B53000138C7F /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
