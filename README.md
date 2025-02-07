@@ -11,5 +11,5 @@ SwiftUI Demo
  2. 三方库引入，MapKit
  3. List View, Data show in List; .listStyle, 
  4. Home Page use Tabview, include CategoryHome and ListHomePage
- 5. 状态管理响应式-ObserveViewPage, apply ObservableObject, @EnvironmentObject, @State, 
+ 5. 状态管理响应式-ObserveViewPage, apply ObservableObject, @EnvironmentObject, @State, @Binding 
  
