@@ -17,55 +17,46 @@ import SwiftUI
  3:  Xcode 右上角 + 可Add new View
  
  4:  #Preview("ListPage") {
- ListViewPage()
- }
+        ListViewPage()
+    }
  5. NavigationView ：确保只有最外层的页面包含 NavigationView，而子页面不需要再嵌套一个新的 NavigationView。
  
  */
 
 struct ContentView: View {
     
-    private let listData:[HomeDataModel] = [
-        HomeDataModel(key: 0, title: "LandMark List"),
-        HomeDataModel(key: 1, title: "Badge Page"),
-        HomeDataModel(key: 2, title: "响应式"),
-    ]
+    enum Tab {
+        case featured
+        case list
+    }
+    
+    
+    
+    @State private var selection: Tab = .featured
+    
+    @EnvironmentObject var modelData: ModelData
     
     
     var body: some View {
         
         NavigationView {
-            VStack {
+            
+            TabView {
                 
-                CircleImage(image: Image("star_game"))
                 
-                List(listData, id: \.self){ item in
-                    
-                    NavigationLink {
-                        
-                        if(item.key == 0){
-                            ListViewPage()
-                            
-                        } else if(item.key == 1){
-                            BadgePage()
-                            
-                        }else if(item.key == 2){
-                            ObserveViewPage()
-                        
-                        }
-                        
-                    } label: {
-                        HStack {
-                            Image(systemName: "globe")
-                                .imageScale(.large)
-                                .foregroundColor(Color.pink)
-                            
-                            Text(item.title).font(Font(.init(.label, size: 17)))
-                            
-                        }.padding()
+                CategoryHomePage(modelData: _modelData)
+                    .tabItem {
+                        Label("Featured", systemImage: "star")
                     }
+                    .tag(Tab.featured)
+                
+                
+                ListHomePage().tabItem {
+                    Label("List", systemImage: "list.bullet")
                     
-                }
+                }.tag(Tab.list)
+                
+                
                 
             }
             .navigationBarHidden(true)
@@ -83,5 +74,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    ContentView().environmentObject(ModelData())
 }

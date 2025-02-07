@@ -8,7 +8,7 @@
 import SwiftUI
 
 
-struct ListViewPage: View {
+struct MapListViewPage: View {
     
     
     @State private var showFavoritesOnly = false
@@ -33,7 +33,7 @@ struct ListViewPage: View {
                 
                 // Navigation push
                 NavigationLink {
-                    MapViewPage(landmark: item)
+                    MapDetailViewPage(landmark: item)
                 } label: {
                     LandmarkRow(landmark: item)
                 }
@@ -68,7 +68,7 @@ struct LandMarkListView : View {
 
 
 #Preview("ListPage") {
-    ListViewPage()
+    MapListViewPage()
 }
 
 #Preview("List1") {

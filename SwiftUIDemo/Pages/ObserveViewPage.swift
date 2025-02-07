@@ -131,6 +131,15 @@ struct EnvironmentView: View {
 
 
 /// ObservableObject
+/* @Published 是 SwiftUI 和 Combine 框架中的一个属性包装器，它的作用是：
+
+✅ 自动发布（通知）视图更新，当属性值发生变化时，所有观察它的 SwiftUI 视图都会自动刷新。
+ 
+ @Published 背后的原理
+ 实际上，@Published 本质上是一个 Combine 的 Publisher，可以手动监听它的变化：
+
+ 
+ */
 
 class CounterModel: ObservableObject {
     @Published var count:Int = 0

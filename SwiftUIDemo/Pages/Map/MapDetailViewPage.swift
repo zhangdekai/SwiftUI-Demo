@@ -8,7 +8,7 @@
 import SwiftUI
 import MapKit
 
-struct MapViewPage: View {
+struct MapDetailViewPage: View {
     
     var landmark: LandMark
     
@@ -102,5 +102,5 @@ struct MapView: View {
 }
 
 #Preview {
-    MapViewPage(landmark: landMarkData[1])
+    MapDetailViewPage(landmark: landMarkData[1])
 }
