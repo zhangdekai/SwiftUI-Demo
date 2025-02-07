@@ -11,38 +11,55 @@ struct CategoryHomePage: View {
     
     @EnvironmentObject var modelData: ModelData
     
+    @State private var showingProfile = false
+    
+    
     var body: some View {
         NavigationView {
-        
+            
             List{
                 
                 modelData.features[0].image.resizable()
                     .scaledToFill()
                     .frame(height: 200)
+                    .listRowInsets(EdgeInsets(top: 0, leading: 12, bottom: 0, trailing: 12))
                     .clipped()
-                    .listRowInsets(EdgeInsets())
-        
+                    .cornerRadius(8)
+
+                
                 
                 ForEach(modelData.categories.keys.sorted(), id: \.self) { key in
                     
                     CategoryRow(categoryName: key, items: modelData.categories[key] ?? [])
                 }
                 .listRowInsets(EdgeInsets())
-
+                
             }
+            .listStyle(.inset)
             .navigationTitle("Featured")
+            .toolbar {
+                Button {
+                    showingProfile.toggle()
+                } label: {
+                    Label("User Profile", systemImage: "person.crop.circle")
+                }
+            }
+            .sheet(isPresented: $showingProfile) {
+                
+                ProfileHost().environmentObject(modelData)
+            }
         }
     }
 }
 
 #Preview {
-        CategoryHomePage().environmentObject(ModelData())
+    CategoryHomePage().environmentObject(ModelData())
     
-//    let landmarks = ModelData().landMarkData
-//    CategoryRow(
-//        categoryName: landmarks[0].category.rawValue,
-//        items: Array(landmarks.prefix(4))
-//    )
+    //    let landmarks = ModelData().landMarkData
+    //    CategoryRow(
+    //        categoryName: landmarks[0].category.rawValue,
+    //        items: Array(landmarks.prefix(4))
+    //    )
 }
 
 struct CategoryRow: View {
@@ -72,7 +89,7 @@ struct CategoryRow: View {
                         } label: {
                             CategoryItem(landmark: landmark)
                         }
-
+                        
                         
                         
                         
@@ -80,7 +97,7 @@ struct CategoryRow: View {
                 }
             }
             .padding(.top, 5).padding(.bottom,10)
-//            .frame(height: 185)
+            //            .frame(height: 185)
             
         }
     }

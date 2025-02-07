@@ -25,6 +25,8 @@ class ModelData: ObservableObject {
         landmarks.filter { $0.isFeatured }
     }
     
+    var profile = Profile.default
+    
 }
 
 var landMarkData:[LandMark] = loadJsonFile("landmarkData.json")

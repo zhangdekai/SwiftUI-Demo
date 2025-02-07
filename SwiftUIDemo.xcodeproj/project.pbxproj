@@ -15,7 +15,8 @@
 		4439ED15E309580A6C01440C /* Pods_SwiftUIDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftUIDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49CC019E2D30F1F600BF2ECB /* SwiftUIDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49FF99482D55B53000138C7F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		49FF994F2D55C0BC00138C7F /* 协议.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "协议.md"; sourceTree = "<group>"; };
+		49FF994F2D55C0BC00138C7F /* Some协议.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Some协议.md"; sourceTree = "<group>"; };
+		49FF99552D560F5800138C7F /* 属性包装器.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "属性包装器.md"; sourceTree = "<group>"; };
 		97282B3468E128EA3FB4F0D1 /* Pods_SwiftUIDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftUIDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -70,7 +71,8 @@
 		49FF994C2D55C03D00138C7F /* Swift资料 */ = {
 			isa = PBXGroup;
 			children = (
-				49FF994F2D55C0BC00138C7F /* 协议.md */,
+				49FF994F2D55C0BC00138C7F /* Some协议.md */,
+				49FF99552D560F5800138C7F /* 属性包装器.md */,
 			);
 			path = "Swift资料";
 			sourceTree = "<group>";

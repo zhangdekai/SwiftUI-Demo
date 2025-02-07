@@ -22,6 +22,8 @@ struct ListHomePage: View {
             
             CircleImage(image: Image("star_game"))
             
+            Divider()
+            
             List(listData, id: \.self){ item in
                 
                 NavigationLink {
@@ -51,7 +53,7 @@ struct ListHomePage: View {
                     }.padding()
                 }
                 
-            }
+            }.listStyle(.inset)
             
         }
     }
