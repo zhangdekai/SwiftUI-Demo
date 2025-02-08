@@ -19,12 +19,17 @@ struct CategoryHomePage: View {
             
             List{
                 
-                modelData.features[0].image.resizable()
-                    .scaledToFill()
-                    .frame(height: 200)
+//                modelData.features[0].image.resizable()
+//                    .scaledToFill()
+//                    .frame(height: 200)
+//                    .listRowInsets(EdgeInsets(top: 0, leading: 12, bottom: 0, trailing: 12))
+//                    .clipped()
+//                    .cornerRadius(8)
+                
+                PageView(pages: modelData.features.map { FeatureCard(landmark: $0) })
                     .listRowInsets(EdgeInsets(top: 0, leading: 12, bottom: 0, trailing: 12))
-                    .clipped()
                     .cornerRadius(8)
+
 
                 
                 

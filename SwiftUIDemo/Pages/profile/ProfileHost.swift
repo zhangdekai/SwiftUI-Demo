@@ -36,12 +36,12 @@ struct ProfileHost: View {
             } else {
                 
                 ProfileEditor(profile: $draftProfile)
-//                    .onAppear {
-//                        draftProfile = modelData.profile
-//                    }
-//                    .onDisappear {
-//                        modelData.profile = draftProfile
-//                    }
+                    .onAppear {
+                        draftProfile = modelData.profile
+                    }
+                    .onDisappear {
+                        modelData.profile = draftProfile
+                    }
                 
             }
             

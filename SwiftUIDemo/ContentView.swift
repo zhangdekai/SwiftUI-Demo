@@ -47,6 +47,7 @@ struct ContentView: View {
                 CategoryHomePage(modelData: _modelData)
                     .tabItem {
                         Label("Featured", systemImage: "star")
+                        // square.and.arrow.up
                     }
                     .tag(Tab.featured)
                 
