@@ -24,7 +24,7 @@ struct PageView<Page: View>: View {
                 .frame(width: CGFloat(pages.count * 18))
                 .padding(.trailing)
         }
-        .aspectRatio(3 / 2, contentMode: .fit)
+        .aspectRatio(16 / 9, contentMode: .fit)
         
     }
 }

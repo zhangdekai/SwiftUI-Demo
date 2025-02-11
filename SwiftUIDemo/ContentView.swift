@@ -28,6 +28,8 @@ struct ContentView: View {
     enum Tab {
         case featured
         case list
+        case recommend
+
     }
     
     
@@ -51,11 +53,18 @@ struct ContentView: View {
                     }
                     .tag(Tab.featured)
                 
+                RecommendHomePage()
+                    .tabItem {
+                        Label("Recommend", systemImage: "square.and.arrow.up")
+                        //
+                    }
+                    .tag(Tab.recommend)
                 
                 ListHomePage().tabItem {
                     Label("List", systemImage: "list.bullet")
                     
                 }.tag(Tab.list)
+                
                 
                 
                 
