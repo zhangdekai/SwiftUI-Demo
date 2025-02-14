@@ -14,6 +14,7 @@ struct ListHomePage: View {
         HomeDataModel(key: 1, title: "Badge Page"),
         HomeDataModel(key: 2, title: "响应式"),
         HomeDataModel(key: 3, title: "Hike Step"),
+        HomeDataModel(key: 4, title: "MVC Mode"),
         
     ]
     
@@ -40,6 +41,9 @@ struct ListHomePage: View {
                     }else if(item.key == 3){
                         HikeView(hike: ModelData().hikes[0])
                         
+                    } else if(item.key == 4){
+                        MVCTestView()
+                    
                     }
                     
                 } label: {

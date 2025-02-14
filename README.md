@@ -11,4 +11,7 @@
  4. Home Page use Tabview, include CategoryHome and ListHomePage
  5. 状态管理响应式-ObserveViewPage, apply ObservableObject, @EnvironmentObject, @State, @Binding 
  6. Profile Page edit profile use  @Binding 
+ 7. RoundedCorners 自定义圆角形状
+ 8. PageView, Recommend Page
+ 9. MVC Mode build 页面，MVCTestView.
  
